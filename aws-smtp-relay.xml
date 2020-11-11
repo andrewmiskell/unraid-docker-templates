@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>aws-smtp-relay</Name>
+  <Repository>blueimp/aws-smtp-relay</Repository>
+  <Registry>https://hub.docker.com/r/blueimp/aws-smtp-relay</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category>Tools: Network:Other Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1605066823</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>25</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+    <Environment>
+    <Variable>
+      <Value/>
+      <Name>AWS_REGION</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>AWS_ACCESS_KEY_ID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>AWS_SECRET_ACCESS_KEY</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="AWS Region" Target="AWS_REGION" Default="" Mode="" Description="Container Variable: AWS_REGION" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="AWS Access Key" Target="AWS_ACCESS_KEY_ID" Default="" Mode="" Description="Container Variable: AWS_ACCESS_KEY_ID" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="AWS Secret Access Key" Target="AWS_SECRET_ACCESS_KEY" Default="" Mode="" Description="Container Variable: AWS_SECRET_ACCESS_KEY" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="SMTP Listen Port" Target="25" Default="" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="false" Mask="false"/>
+</Container>
