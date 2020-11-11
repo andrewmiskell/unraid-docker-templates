@@ -8,16 +8,16 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support/>
-  <Project/>
+  <Project>https://github.com/blueimp/aws-smtp-relay</Project>
   <Overview/>
-  <Category>Tools: Network:Other Status:Stable</Category>
+  <Category>Tools: Network:Management Status:Stable</Category>
   <WebUI/>
   <TemplateURL/>
-  <Icon/>
+  <Icon>https://d2brgs9tw7l5in.cloudfront.net/home/SES_logo_transparent.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1605066823</DateInstalled>
+  <DateInstalled>1605070902</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description/>
@@ -31,8 +31,14 @@
       </Port>
     </Publish>
   </Networking>
-  <Data/>
-    <Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/aws-smtp-relay</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment>
     <Variable>
       <Value/>
       <Name>AWS_REGION</Name>
@@ -48,10 +54,29 @@
       <Name>AWS_SECRET_ACCESS_KEY</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value/>
+      <Name>PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>BCRYPT_HASH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>TLS_KEY_PASS</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="AWS Region" Target="AWS_REGION" Default="" Mode="" Description="Container Variable: AWS_REGION" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Access Key" Target="AWS_ACCESS_KEY_ID" Default="" Mode="" Description="Container Variable: AWS_ACCESS_KEY_ID" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Secret Access Key" Target="AWS_SECRET_ACCESS_KEY" Default="" Mode="" Description="Container Variable: AWS_SECRET_ACCESS_KEY" Type="Variable" Display="always" Required="true" Mask="true"/>
   <Config Name="SMTP Listen Port" Target="25" Default="" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/aws-smtp-relay" Mode="ro" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/aws-smtp-relay</Config>
+  <Config Name="SMTP Password" Target="PASSWORD" Default="" Mode="" Description="Plaintext SMTP Password (requires CRAM-MD5 on the client)" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="SMTP Password (Hashed)" Target="BCRYPT_HASH" Default="" Mode="" Description="Encrypted SMTP Password (enables LOGIN and PLAIN authentication but requires TLS enabled)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="TLS Certificate Key Password" Target="TLS_KEY_PASS" Default="" Mode="" Description="TLS Certificate Password (if specified on the private/public certificates)" Type="Variable" Display="advanced" Required="false" Mask="true"/>
 </Container>
