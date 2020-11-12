@@ -74,7 +74,7 @@
   <Config Name="AWS Region" Target="AWS_REGION" Default="" Mode="" Description="Container Variable: AWS_REGION" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Access Key" Target="AWS_ACCESS_KEY_ID" Default="" Mode="" Description="Container Variable: AWS_ACCESS_KEY_ID" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Secret Access Key" Target="AWS_SECRET_ACCESS_KEY" Default="" Mode="" Description="Container Variable: AWS_SECRET_ACCESS_KEY" Type="Variable" Display="always" Required="true" Mask="true"/>
-  <Config Name="SMTP Listen Port" Target="25" Default="" Mode="tcp" Description="Container Port: 25" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="SMTP Listen Port" Target="1025" Default="" Mode="tcp" Description="Container Port: 1025" Type="Port" Display="always" Required="false" Mask="false"/>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/aws-smtp-relay" Mode="ro" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/aws-smtp-relay</Config>
   <Config Name="SMTP Password" Target="PASSWORD" Default="" Mode="" Description="Plaintext SMTP Password (requires CRAM-MD5 on the client)" Type="Variable" Display="advanced" Required="false" Mask="true"/>
   <Config Name="SMTP Password (Hashed)" Target="BCRYPT_HASH" Default="" Mode="" Description="Encrypted SMTP Password (enables LOGIN and PLAIN authentication but requires TLS enabled)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
