@@ -29,6 +29,7 @@
         <ContainerPort>3306</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
