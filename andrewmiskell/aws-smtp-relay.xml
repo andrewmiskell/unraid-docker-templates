@@ -12,7 +12,7 @@
   <Overview/>
   <Category>Tools: Network:Management Status:Stable</Category>
   <WebUI/>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/andrewmiskell/unraid-docker-templates/main/andrewmiskell/aws-smtp-relay.xml</TemplateURL>
   <Icon>https://d2brgs9tw7l5in.cloudfront.net/home/SES_logo_transparent.png</Icon>
   <ExtraParams/>
   <PostArgs/>
