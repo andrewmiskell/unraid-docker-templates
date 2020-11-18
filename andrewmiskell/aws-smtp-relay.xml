@@ -21,56 +21,6 @@
   <DonateText/>
   <DonateLink/>
   <Description/>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort/>
-        <ContainerPort>25</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/aws-smtp-relay</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>ro</Mode>
-    </Volume>
-  </Data>
-  <Environment>
-    <Variable>
-      <Value/>
-      <Name>AWS_REGION</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>AWS_ACCESS_KEY_ID</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>AWS_SECRET_ACCESS_KEY</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>PASSWORD</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>BCRYPT_HASH</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value/>
-      <Name>TLS_KEY_PASS</Name>
-      <Mode/>
-    </Variable>
-  </Environment>
-  <Labels/>
   <Config Name="AWS Region" Target="AWS_REGION" Default="" Mode="" Description="Container Variable: AWS_REGION" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Access Key" Target="AWS_ACCESS_KEY_ID" Default="" Mode="" Description="Container Variable: AWS_ACCESS_KEY_ID" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="AWS Secret Access Key" Target="AWS_SECRET_ACCESS_KEY" Default="" Mode="" Description="Container Variable: AWS_SECRET_ACCESS_KEY" Type="Variable" Display="always" Required="true" Mask="true"/>
