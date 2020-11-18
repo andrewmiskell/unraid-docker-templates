@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>traefik</Name>
+  <Repository>traefik:latest</Repository>
+  <Registry>https://hub.docker.com/_/traefik</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://containo.us/traefik/</Project>
+  <Overview>Modern lightweight reverse proxy with docker support</Overview>
+  <Category>Security: Network:Web Network:Proxy Status:Stable</Category>
+  <WebUI>https://[IP]:[PORT:8443]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/andrewmiskell/unraid-docker-templates/main/andrewmiskell/traefik.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/andrewmiskell/unraid-docker-templates/main/img/traefik.logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1605063845</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Config Name="Configuration Directory" Target="/etc/traefik" Default="/mnt/user/appdata/traefik" Mode="rw" Description="Path to configuration directory on UnRAID" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="HTTP Port" Target="80" Default="8080" Mode="tcp" Description="HTTP Port - Default set at 8080 to avoid conflicts with UnRAID's UI port when in bridge" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="HTTPS Port" Target="443" Default="8443" Mode="tcp" Description="HTTPS Port - Default set at 8443 to avoid conflicts with UnRAID's UI port when in bridge" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Path to docker socket on UnRAID host (required for Traefik to read docker labels from other containers for dynamic configuration)." Type="Path" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="CLOUDFLARE_DNS_API_TOKEN" Target="CLOUDFLARE_DNS_API_TOKEN" Default="" Mode="" Description="Container Variable: CLOUDFLARE_DNS_API_TOKEN" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="TRAEFIK_API" Target="TRAEFIK_API" Default="true|false" Mode="" Description="Container Variable: TRAEFIK_API" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_DELAYBEFORECHECK" Target="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_DELAYBEFORECHECK" Default="0" Mode="" Description="Container Variable: TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_DELAYBEFORECHECK" Type="Variable" Display="always" Required="false" Mask="{8}"/>
+  <Config Name="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_PROVIDER" Target="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_PROVIDER" Default="" Mode="" Description="Container Variable: TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_PROVIDER" Type="Variable" Display="always" Required="false" Mask="{8}"/>
+  <Config Name="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_RESOLVERS" Target="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_RESOLVERS" Default="" Mode="" Description="Container Variable: TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_DNSCHALLENGE_RESOLVERS" Type="Variable" Display="always" Required="false" Mask="{8}"/>
+  <Config Name="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL" Target="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL" Default="" Mode="" Description="Container Variable: TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_EMAIL" Type="Variable" Display="always" Required="false" Mask="{8}"/>
+  <Config Name="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_STORAGE" Target="TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_STORAGE" Default="/etc/traefik/acme.json" Mode="" Description="Container Variable: TRAEFIK_CERTIFICATESRESOLVERS_LETSENCRYPT_ACME_STORAGE" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS" Target="TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS" Default=":80" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTP_ADDRESS" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS" Target="TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS" Default=":443" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTPS_FORWARDEDHEADERS_TRUSTEDIPS" Target="TRAEFIK_ENTRYPOINTS_HTTPS_FORWARDEDHEADERS_TRUSTEDIPS" Default="" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_FORWARDEDHEADERS_TRUSTEDIPS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_CERTRESOLVER" Target="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_CERTRESOLVER" Default="letsencrypt" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_CERTRESOLVER" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_MAIN" Target="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_MAIN" Default="" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_MAIN" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_SANS" Target="TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_SANS" Default="" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_HTTP_TLS_DOMAINS[0]_SANS" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_ENTRYPOINTS_TRAEFIK_ADDRESS" Target="TRAEFIK_ENTRYPOINTS_TRAEFIK_ADDRESS" Default=":8080" Mode="" Description="Container Variable: TRAEFIK_ENTRYPOINTS_HTTPS_TRAEFIK_ADDRESS" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_LOG_LEVEL" Target="TRAEFIK_LOG_LEVEL" Default="INFO|WARN|ERRPR|FATAL|PANIC|DEBUG" Mode="" Description="Container Variable: TRAEFIK_LOG_LEVEL" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_LOG" Target="TRAEFIK_LOG" Default="true|false" Mode="" Description="Container Varaible: TRAEFIK_LOG" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_PROVIDERS_DOCKER_ENDPOINT" Target="TRAEFIK_PROVIDERS_DOCKER_ENDPOINT" Default="unix://var/run/docker.sock" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_DOCKER_ENDPOINT" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT" Target="TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT" Default="false|true" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_PROVIDERS_DOCKER_SWARMMODE" Target="TRAEFIK_PROVIDERS_DOCKER_SWARMMODE" Default="false|true" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_DOCKER_SWARMMODE" Type="Variable" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="TRAEFIK_PROVIDERS_DOCKER" Target="TRAEFIK_PROVIDERS_DOCKER" Default="true|false" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_DOCKER" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_PROVIDERS_FILE_DIRECTORY" Target="TRAEFIK_PROVIDERS_FILE_DIRECTORY" Default="/etc/traefik/dynamic/" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_FILE_DIRECTORY" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="TRAEFIK_PROVIDERS_FILE_WATCH" Target="TRAEFIK_PROVIDERS_FILE_WATCH" Default="true|false" Mode="" Description="Container Variable: TRAEFIK_PROVIDERS_FILE_WATCH" Type="Variable" Display="advanced-hide" Required="false" Mask="null"/>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.middlewares.redirect-to-https.redirectscheme.scheme" Target="traefik.http.middlewares.redirect-to-https.redirectscheme.scheme" Default="https" Mode="" Description="Container Label: traefik.http.middlewares.redirect-to-https.redirectscheme.scheme" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.http-catchall.entrypoints" Target="traefik.http.routers.http-catchall.entrypoints" Default="true" Mode="" Description="Container Label: traefik.http.routers.http-catchall.entrypoints" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.http-catchall.middlewares" Target="traefik.http.routers.http-catchall.middlewares" Default="redirect-to-https" Mode="" Description="Container Label: traefik.http.routers.http-catchall.middlewares" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.http-catchall.rule" Target="traefik.http.routers.http-catchall.rule" Default="HostRegexp(`{host:.+}`)" Mode="" Description="Container Label: traefik.http.routers.http-catchall.rule" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.traefik.entrypoints" Target="traefik.http.routers.traefik.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.traefik.entrypoints" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.traefik.middlewares" Target="traefik.http.routers.traefik.middlewares" Default="" Mode="" Description="Container Label: traefik.http.routers.traefik.middlewares" Type="Label" Display="always" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.traefik.rule" Target="traefik.http.routers.traefik.rule" Default="" Mode="" Description="Container Label: traefik.http.routers.traefik.rule" Type="Label" Display="always" Required="false" Mask="false"/>
+  <Config Name="traefik.http.routers.traefik.service" Target="traefik.http.routers.traefik.service" Default="api@internal" Mode="" Description="Container Label: traefik.http.routers.traefik.service" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+  <Config Name="traefik.http.services.traefik.loadbalancer.server.port" Target="traefik.http.services.traefik.loadbalancer.server.port" Default="8080" Mode="" Description="Container Label: traefik.http.services.traefik.loadbalancer.server.port" Type="Label" Display="advanced-hide" Required="false" Mask="false"/>
+</Container>
