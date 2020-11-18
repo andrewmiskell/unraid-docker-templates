@@ -21,8 +21,8 @@
   <DonateText/>
   <DonateLink/>
   <Description>An Enhanced drop in replacement for MySQL</Description>
-  <Config Name="UserID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
-  <Config Name="GroupID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="MySQL Root Password" Target="MYSQL_ROOT_PASSWORD" Default="0" Mode="" Description="Container Variable: MYSQL_ROOT_PASSWORD" Type="Variable" Display="always" Required="false" Mask="true"></Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/mariadb" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/mariadb</Config>
+  <Config Name="UserID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="GroupID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MySQL Root Password" Target="MYSQL_ROOT_PASSWORD" Default="0" Mode="" Description="Container Variable: MYSQL_ROOT_PASSWORD" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/mariadb" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false"/>
 </Container>
